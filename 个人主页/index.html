@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            position: fixed;
+            border: 1px solid #ccc;
+            width: 100%;
+            top: 0px;
+            background-color: aliceblue;
+            z-index: 100;
+        }
+
+        .hbox {
+            width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 60px;
+            line-height: 60px;
+        }
+
+        img {
+            height: 40px;
+            vertical-align: middle;
+        }
+
+        ul {
+            list-style-type: none;
+            float: right;
+        }
+
+        li {
+            float: left;
+        }
+
+        .clearfix {
+            clear: both;
+            content: "";
+            display: block;
+            visibility: hidden;
+            height: 0;
+        }
+
+        a {
+            display: inline-block;
+            width: 80px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: aqua;
+        }
+
+        .benner {
+            margin-top: 62px;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto;
+            
+        }
+
+        p {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        p::before {
+            content: "“";
+            font-family: "宋体";
+        }
+
+        p::after {
+            content: "”";
+            font-family: "宋体";
+        }
+
+        .container {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        h2 {
+            border-left: 20px solid goldenrod;
+        }
+        footer{
+            border-top: 1px solid #ccc;
+            width: 960px;
+            margin:10px auto;
+            padding: 20px;
+        }
+        footer address{
+            display: inline-block;
+        }
+        #classmate{
+            position: relative;
+        }
+        #classmate .img1{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            left: 100px;
+            top: 200px;
+        }
+        #classmate .img2{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            position: absolute;
+            left: 300px;
+            top: 300px;
+        }
+        #classmate .img3{
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            position: absolute;
+            left: 680px;
+            top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="home">
+        <div class="hbox">
+            <img src="images/logo.png" alt="logo.png">
+            <ul class="nav">
+                <li>
+                    <a href="#home">首页</a>
+                </li>
+                <li>
+                    <a href="#html5">HTML5</a>
+                </li>
+                <li>
+                    <a href="#classmate">我的同学</a>
+                </li>
+                <li>
+                    <a href="#hometown">我的家乡</a>
+                </li>
+                <li>
+                    <a href="#school">我的学校</a>
+                </li>
+                <li>
+                    <a href="#about">关于</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </header>
+    <div class="banner">
+        <img src="images/header.jpg" alt="" srcset="">
+        <p>学好一门技术的唯一方法是使用它，在使用它的过程中才能真正学会它。 如果能够在使用它的过程中体会到乐趣，就是学习的最佳状态。希望大家在学习HTML5的过程中多多练习，多敲代码一定会有回报，意想不到的收获都会在使用的过程中迸发出来。</p>
+    </div>
+
+    <div class="container">
+        <section id="html5">
+            <h2>&nbsp;html5</h2>
+            <img src="images/html5.jpg" alt="垃圾">
+            <P>从小就喜欢学习，感觉自己的自学能力超强，也喜欢把自己学会的知识分享给大家。我希望自己能够成为一个好老师，把每一个同学都教好，让他们都能有所成就。我认为一个好老师不仅要有较好的技术，也要对学生严格要求。放任不管只有部分同学能安心学习，严格要求才能保证绝大多数同学都能稳下心来好好学习。</P>
+        </section>
+        <section id="classmate">
+            <h2>&nbsp;html5</h2>
+            <img src="images/classmates.jpg" alt="垃圾">
+            <img class="img1" src="images/lry.jpg" alt="lry">
+            <img class="img2" src="images/ldh.jpg" alt="ldh">
+            <img class="img3" src="images/wf.png" alt="wf">
+            <P>王菲、刘若英、刘德华：很高兴和你们一起学习HTML5，感谢在这个美好的季节遇见你们！。。</P>
+        </section>
+        <section id="hometown">
+            <h2>&nbsp;html5</h2>
+            <img src="images/hometown.jpg" alt="垃圾">
+            <P>
+                我的大学----兰州大学。在这里度过了我人生中最难忘的四年时光。那里的风光，那里的人，那里的图书馆，还有那里蓝蓝的天和金黄的秋天，每每回想想来总是让心中久久不能平复。</P>
+        </section>
+
+    </div>
+    <footer>
+            <span>智游教育 &copy;2018版权所有</span>
+            <span>电话：0371-123456789</span>
+            <address>郑州市经开区河南通信产业园6楼605</address>
+    </footer>
+
+
+</body>
+
+</html>
