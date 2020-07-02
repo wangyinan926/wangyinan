@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "requiredBackgroundModes ": "audio" ,
+  "navigationBarBackgroundColor":"#00004d",
+  "navigationBarTitleText": "来听点音乐吧",
+  "navigationBarTextStyle": "white"
+}

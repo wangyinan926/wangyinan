@@ -1,0 +1,81 @@
+/* pages/home/home.wxss */
+
+
+.avatar-wrapper {
+  /* background: #; */
+  padding: 25rpx 0;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.list-wrapper {
+  width: 65%;
+  margin: 0 auto;
+  background: #fff;
+  border: 1rpx solid #e0e3da;
+  border-radius: 18rpx;
+}
+
+.avatar-wrapper .avatar {
+  margin: 100rpx auto 0;
+  text-align: center;
+}
+
+.avatar-wrapper .avatar image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.avatar-wrapper .text {
+  text-align: center;
+  color: #fff;
+}
+
+.listimg image {
+  margin-right: 15rpx;
+  vertical-align: middle;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.content {
+  width: 600rpx;
+  display: flex;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 40rpx;
+  color: #4d4d4d;
+  font-size: 28rpx;
+  text-align: left;
+}
+
+button::after {
+  border: none;
+  margin: 0;
+
+}
+
+button:not([size='mini']) {
+  width: auto;
+  font-weight: normal;
+  background: #fff;
+  align-items: center;
+}
+
+/*分割线样式*/
+
+.divLine {
+  background: #e0e3da;
+  margin: 0 auto;
+  width: 90%;
+  height: 3rpx;
+}
+
+.arrows image {
+  vertical-align: middle;
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 1000rpx;
+}

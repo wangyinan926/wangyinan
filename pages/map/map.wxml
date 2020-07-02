@@ -1,0 +1,3 @@
+<!--pages/map/map.wxml-->
+ <map class='map' id='myMap' longitude="{{longitude}}" latitude="{{latitude}}" 
+show-location="true" scale='15'></map>

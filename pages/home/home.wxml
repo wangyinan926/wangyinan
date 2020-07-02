@@ -1,0 +1,37 @@
+<!--pages/home/home.wxml-->
+<view class="mine-wrapper">
+  <view class="avatar-wrapper">
+    <view>
+      <view class="avatar" bindtap="gomuic">
+        <image style="border-radius:50%;" src="{{'../../images/user.jpg'}}"></image>
+      </view>
+      <view class="text">
+        <text>It's me</text>
+      </view>
+    </view>
+  </view>
+  <view class="list-wrapper" style="transform:{{transform}};transition-duration:{{duration}}">
+    <view class="alllists">
+      <block wx:for="{{menuitems}}" wx:key="menu_for">
+        <navigator url="{{item.url}}" wx:if="{{item.tips=='share'}}" class="lists">
+          <button  class='content' open-type='share' >
+            <view class="listimg">
+              <image src="{{item.icon}}"></image>
+            </view>
+            <view class="listtext">{{item.text}}</view>
+          </button>
+        </navigator>
+        <navigator wx:else url="{{item.url}}" class="lists">
+          <view class='content'>
+            <view class="listimg">
+              <image src="{{item.icon}}"></image>
+            </view>
+            <view class="listtext">{{item.text}}</view>
+          </view>
+        </navigator>
+        <!-- 分割线 -->
+        <view class="divLine"></view>
+      </block>
+    </view>
+  </view>
+</view>

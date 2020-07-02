@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/my_music/my_music",
+    "pages/logs/logs",
+    "pages/center/center",
+    "pages/map/map"
+  ],
+  "requiredBackgroundModes ": "audio",
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "王银安",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#0088cc",
+    "color": "#dbdbdb",
+    "list": [
+      {
+        "pagePath": "pages/center/center",
+        "text": "首页",
+        "iconPath": "images/tabar/home1.png",
+        "selectedIconPath": "images/tabar/home.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "天气",
+        "iconPath": "images/tabar/home_menu1.png",
+        "selectedIconPath": "images/tabar/home_menu.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "我的",
+        "iconPath": "images/tabar/mine1.png",
+        "selectedIconPath": "images/tabar/mine.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

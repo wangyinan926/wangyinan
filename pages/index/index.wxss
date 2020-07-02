@@ -1,0 +1,192 @@
+/**index.wxss**/
+.map-box{
+  width: 90%;
+  height: 288rpx;
+  overflow: hidden;
+  margin: 60rpx auto 30rpx;
+  border-radius: 15rpx;
+}
+#myMap{
+  width: 100%;
+  height: 100%;
+}
+.slide-image {
+  height: 288rpx;
+  width: 100%;
+ }
+ page{
+   width: 100%;
+   height:auto;
+  overflow:auto;
+  overflow-x:hidden;
+ }
+ .weather_box{
+   width: 90%;
+   margin:140rpx auto 0 ;
+   /* border: 1rpx red solid; */
+   height:auto;
+ }
+ .seach_input_left,
+ .seach_input_right{
+   display: inline-block;
+   height: 80rpx;
+   box-sizing: border-box;
+   vertical-align: top;
+   overflow: hidden;
+   font-size: 32rpx;
+ }
+ .seach_input_left{
+  border: solid 1px #f2f2f2;
+  /* border-radius: 15rpx; */
+  border-top-left-radius: 15rpx;
+  border-bottom-left-radius: 15rpx;
+  width:70%;
+ }
+ .seach_input_right{
+  border-top-right-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+   background-color: #00cc66;
+   width: 30%;
+ }
+ .seach_input_right_flex{
+   display: flex;
+   width: 100%;
+   height: 100%;
+   justify-content: center;
+   align-items:center;
+   color:	 #f2f2f2;
+ }
+ .seach_input{
+   /* border: springgreen solid 3px; */
+   color:	 #f2f2f2;
+   line-height: 80rpx;
+   height: 100%;
+   text-align: center;
+   width: 100%;
+ }
+ .seach_input_image{
+   display: block;
+   margin-left:10rpx ;
+   width: 35rpx;
+   height: 30rpx;
+ }
+ /* pages/ceshi/ceshi.wxss */
+/**index.wxss**/
+ 
+/**common css**/
+.w{
+  color: white;
+}
+.b{
+  font-weight: bold;
+}
+ 
+.l{
+  border: 1rpx solid #fff;
+}
+ 
+.center{
+  text-align: center;
+  margin: auto 10rpx;
+}
+
+ .day{
+  text-align: center;
+  margin: auto 0;
+  width: 20%;
+}
+ .tmp{
+  text-align: center;
+  margin: auto 0;
+  width: 50%;
+  margin-left: 25rpx;
+}
+.hor{
+  display: flex;
+}
+ 
+.f50{
+  font-size: 50rpx;
+}
+ 
+/**index css**/
+
+.temp{
+  font-size: 170rpx;
+}
+ 
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.nowWeather{
+  padding: 60rpx 10rpx;
+}
+
+.weahterDetail{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+ 
+.forcast{
+  padding: 30rpx 0 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+  font-size: 30rpx;
+  color: #595959;
+}
+
+
+.img{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 16rpx;
+}
+
+
+@keyframes remindMessage {
+  0% {
+    -webkit-transform: translateX(90%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-180%);
+  }
+}
+
+.tongzhitext {
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  background-color: #cceeff;
+  width: 100%;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+}
+
+.tongzhi-text {
+  font-size: 30rpx;
+  animation: remindMessage 14s linear infinite;
+  width: 50%;
+  line-height: 30rpx; 
+   height: 30rpx;
+  color: #595959;
+  display: block;
+}
+
+.closeView {
+  width: 45rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 5rpx;
+  text-align: center;
+  font-size: 35rpx;
+}
