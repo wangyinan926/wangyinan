@@ -65,7 +65,7 @@ Page({
       key: '46RBZ-KCA6D-HSH4Z-HDRI2-PBC3Q-I7FLQ' //这里自己的key秘钥进行填充
     });
     let vm = this;
-    vm.getUserLocation(e);
+    vm.getUserLocation(1);
   },
   bindMapTap: function () {
     wx.navigateTo({
@@ -82,7 +82,7 @@ Page({
     this.onLoad(1)
     wx.stopPullDownRefresh()
   },
-  getUserLocation: function (e) {
+  getUserLocation: function (e,i) {
     let vm = this;
     wx.getSetting({
       success: (res) => {

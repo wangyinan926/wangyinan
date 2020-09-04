@@ -159,25 +159,25 @@
 }
 
 .tongzhitext {
-
-  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
   background-color: #cceeff;
   width: 100%;
+  overflow: hidden;
   border-radius: 15rpx;
   box-sizing: border-box;
+
 }
 
 .tongzhi-text {
   font-size: 30rpx;
-  animation: remindMessage 14s linear infinite;
-  width: 50%;
+  animation: remindMessage 10s linear infinite;
+  width: 100%;
   line-height: 30rpx; 
-   height: 30rpx;
+  height: 30rpx;
   color: #595959;
   display: block;
+  z-index: 999;
 }
 
 .closeView {
@@ -189,4 +189,7 @@
   top: 5rpx;
   text-align: center;
   font-size: 35rpx;
+}
+.lists{
+  
 }

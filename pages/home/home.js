@@ -27,10 +27,10 @@ Page({
         arrows: '/images/user/arrows.png'
       },
       {
-        text: '帮助说明',
+        text: '来聊聊天',
         url: '#',
         icon: '/images/help.png',
-        tips: '',
+        tips: 'cus',
         arrows: '/images/user/arrows.png'
       }
     ],

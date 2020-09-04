@@ -79,3 +79,29 @@ button:not([size='mini']) {
   height: 30rpx;
   margin-left: 1000rpx;
 }
+.lists button{
+  width: 100%;
+  display: block;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+}
+button::after {
+  border: none;
+  background-color: #fff;
+}
+.lists{
+  width: auto;
+  margin: 0 30rpx;
+}
+.content{
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}

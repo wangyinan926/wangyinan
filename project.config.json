@@ -14,7 +14,7 @@
 		"coverView": true,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
-		"useCompilerModule": false
+		"useCompilerModule": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.0",
