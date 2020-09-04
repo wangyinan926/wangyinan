@@ -1,0 +1,6 @@
+/* pages/mine/mine.wxss */
+text{
+  text-align: center;
+  display: block;
+  margin-top: 300rpx;
+}

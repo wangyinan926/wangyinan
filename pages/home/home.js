@@ -7,7 +7,7 @@ Page({
   data: {
     menuitems: [{
         text: '个人资料',
-        url: '#',
+        url: '../mine/mine',
         icon: '/images/mine.png',
         tips: '',
         arrows: '/images/user/arrows.png'

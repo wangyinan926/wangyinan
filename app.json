@@ -5,7 +5,8 @@
     "pages/my_music/my_music",
     "pages/logs/logs",
     "pages/center/center",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/mine/mine"
   ],
   "requiredBackgroundModes ": "audio",
   "window": {
