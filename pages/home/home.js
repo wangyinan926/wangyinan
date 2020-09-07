@@ -118,7 +118,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: '来瞅一哈！',
-      path: '/page/home/home' // 路径，传递参数到指定页面。
+      path: '/pages/center/center' // 路径，传递参数到指定页面。
 
     }
   }

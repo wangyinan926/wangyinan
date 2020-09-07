@@ -8,7 +8,7 @@
     "pages/map/map",
     "pages/mine/mine"
   ],
-  "requiredBackgroundModes ": "audio",
+  "requiredBackgroundModes": ["audio"],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
