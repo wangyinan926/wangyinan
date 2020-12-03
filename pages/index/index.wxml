@@ -1,5 +1,16 @@
 <!--index.wxml-->
+
 <view class="retailStore">
+  <swiper class="map-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}"
+ indicator-active-color="{{activeColor}}">
+ <block wx:for="{{imgUrls}}"  wx:key='{{id}}'>
+ <swiper-item>
+  <navigator  hover-class="navigator-hover">
+  <image src="{{item.url}}" class="slide-image" width="355" height="200" />
+  </navigator>
+ </swiper-item>
+ </block>
+</swiper>
 <!--轮播图-->
 <view class="weather_box" >
 <view class="seach_input_left">
@@ -52,20 +63,8 @@
 　　　　<text class="tongzhi-text">{{notice}}</text>
 　　</view>
 </view>
-
 </view>
-<swiper class="map-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}"
- indicator-active-color="{{activeColor}}">
- <block wx:for="{{imgUrls}}"  wx:key='{{id}}'>
- <swiper-item>
-  <navigator url="{{item.link}}" hover-class="navigator-hover">
-  <image src="{{item.url}}" class="slide-image" width="355" height="200" />
-  </navigator>
- </swiper-item>
- </block>
-</swiper>
-
-	<view class="map-box">
+	<view class="map-box" style="margin-top:30rpx">
 		<map class='map' id='myMap' longitude="{{longitude}}" latitude="{{latitude}}" show-location="true" bindtap='bindMapTap' scale='15'>
 		</map>
 	</view>

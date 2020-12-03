@@ -41,16 +41,21 @@ Page({
     longitude: '',
     imgUrls: [{
       id: 0,
-      link: '/my_music/my_music',
-      url: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2525925535,4044091073&fm=26&gp=0.jpg'
+      url: 'https://th.wallhaven.cc/small/j3/j3833m.jpg'
     }, {
       id: 1,
-      link: '/my_music/my_music',
-      url: 'https://ns-strategy.cdn.bcebos.com/ns-strategy/upload/fc_big_pic/part-00779-2260.jpg'
+      url: 'https://th.wallhaven.cc/small/k7/k797xd.jpg'
     }, {
       id: 2,
-      link: '/my_music/my_musicr',
-      url: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2743268655,1778161208&fm=26&gp=0.jpg'
+      url: 'https://th.wallhaven.cc/small/x8/x8183o.jpg'
+    },
+    {
+      id: 3,
+      url: 'https://th.wallhaven.cc/small/v9/v9m9rp.jpg'
+    },
+    {
+      id: 4,
+      url: 'https://th.wallhaven.cc/small/72/7266we.jpg'
     }],
     indicatorDots: true, //小点
     indicatorColor: "white", //指示点颜色

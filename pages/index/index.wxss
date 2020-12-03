@@ -3,7 +3,7 @@
   width: 90%;
   height: 288rpx;
   overflow: hidden;
-  margin: 60rpx auto 30rpx;
+  margin: 190rpx auto 30rpx;
   border-radius: 15rpx;
 }
 #myMap{
@@ -22,7 +22,7 @@
  }
  .weather_box{
    width: 90%;
-   margin:140rpx auto 0 ;
+   margin:40rpx auto 0 ;
    /* border: 1rpx red solid; */
    height:auto;
  }
