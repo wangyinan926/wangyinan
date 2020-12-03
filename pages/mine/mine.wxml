@@ -1,2 +1,73 @@
 <!--pages/mine/mine.wxml-->
-<text>先空着，改天写</text>
+<view class="user_top_box">
+   <view class="user_top">
+     <image src="../../images/user.jpg" alt="" />
+   </view>
+   <text class='user_label center'>{{name}}</text>
+   <text class='center samll'>期望职位: 前端开发</text>
+   <text class='center samll'>男  {{age}}岁  3年开发经验</text>
+   <view class="text_box">
+     <view class="item_box" bindtap="copyText">
+      <image src="../../images/wechat.png"></image>
+      <text class='samll'>添加微信</text>
+     </view>
+     <view class="item_box" bindtap='call' >
+      <image src="../../images/phone.png"></image>
+      <text class='samll'>拨打电话</text>
+     </view>
+     <view class="item_box" bindtap='add' >
+      <image src="../../images/phoneL.png" ></image>
+      <text class='samll'>保存通讯录</text>
+     </view>
+   </view>
+</view>
+
+<!-- <view class="user_box">
+ <view class="user_item">
+   <text class='user_label'>姓名: <text class='user_text'>王银安</text></text>
+   <text class='user_label'>籍贯: <text class='user_text'>河南周口</text></text>
+ </view>
+ <view class="user_item">
+   <text class='user_label'>性别: <text class='user_text'>男</text></text>
+   <text class='user_label'>生日: <text class='user_text'>1995.9</text></text>
+ </view>
+ <view class="user_item">
+   <text class='user_label wieght'>毕业院校: <text class='user_text'>许昌职业技术学院</text></text>
+ </view>
+</view> -->
+<view class="user_top_box">
+  <view class="user_item_tip">
+     <image src="../../images/school.png" alt="" />
+   </view>
+   <view class="text_box" style="margin-top:0">
+      <view class="line"></view>
+      <view class="user_label center" style="margin-top:0">教育背景</view>
+      <view class="line"></view>
+   </view>
+   <view class="school_list">
+      <image src="../../images/time.png"></image>
+      <text>2014.9-2017.6</text>
+   </view>
+   <view class="school_list">
+      <image src="../../images/name.png"></image>
+      <text>许昌职业技术学院</text>
+   </view>
+   <view class="school_list">
+      <image src="../../images/pic1.png"></image>
+      <text>计算机网络技术</text>
+   </view>
+</view>
+<view class="user_top_box">
+  <view class="user_item_tip">
+     <image style="height:45rpx" src="../../images/pic2.png" alt="" />
+   </view>
+   <view class="text_box" style="margin-top:0">
+      <view class="line"></view>
+      <view class="user_label center" style="margin-top:0">技术栈</view>
+      <view class="line"></view>
+   </view>
+  <view class="school_list"><text class="t_label">基本功: </text>  html,css,js</view>
+  <view class="school_list"><text class="t_label">主流框架: </text> vue,react,微信小程序,node,jquery</view>
+  <view class="school_list"><text class="t_label">UI框架: </text> Elementui,Vux,Antd,Bootstrap</view> 
+  <view class="school_list"><text class="t_label">其他: </text>webpack打包,mysql常用命令等</view>
+</view>
