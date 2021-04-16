@@ -5,6 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    down:'',
+    show:'',
+    user:{},
+    timer:'',
     menuitems: [{
         text: '个人资料',
         url: '../mine/mine',
@@ -20,34 +24,43 @@ Page({
         arrows: '/images/user/arrows.png'
       },
       {
-        text: '听点音乐',
-        url: '../my_music/my_music',
-        icon: '/images/music.png',
-        tips: '',
-        arrows: '/images/user/arrows.png'
-      },
-      {
         text: '来聊聊天',
         url: '#',
         icon: '/images/help.png',
         tips: 'cus',
         arrows: '/images/user/arrows.png'
+      },
+      {
+        text: '用户信息',
+        url: '../user/user',
+        icon: '/images/music.png',
+        arrows: '/images/user/arrows.png',
+        tips:'mm'
       }
     ],
     transform: 'translateY(100%)',
     duration: '0.8s'
-  },
-  gomuic: function () {
-    wx.navigateTo({
-      url: '../my_music/my_music'
-    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var user =wx.getStorageSync('user')||false
+    console.log(user)
+    if(!user){
+     let i =  setTimeout(()=>{
+        wx.navigateTo({
+          url:  "/pages/login/login",
+        })
+      },2000)
+      this.setData({
+        timer:i
+      })
+    }
+    this.setData({
+      user:user
+    })
   },
 
   /**
@@ -62,32 +75,23 @@ Page({
    */
   onShow: function () {
     var that = this
-    setTimeout(function a1() {
-      that.setData({
-        transform: 'translateY(0)',
-        duration: '0.3s'
-      })
-    }, 50)
-    setTimeout(() => {
-      this.setData({
-        transform: 'translateY(15%)',
-        duration: '0.12s'
-      })
-    }, 300)
-    setTimeout(() => {
-      this.setData({
-        transform: 'translateY(10%)',
-        duration: '0.061s'
-      })
-    }, 400)
+    var user =wx.getStorageSync('user')||false
+    this.setData({
+      user:user,
+      down:'down',
+      show:'show'
+    })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    var that = this;
+    clearInterval(that.data.timer)
     this.setData({
-      transform: 'translateY(100%)',
+      down: '',
+      show:''
     })
   },
 
@@ -95,7 +99,12 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    var that = this;
+    clearInterval(that.data.timer)
+    this.setData({
+      down: '',
+      show:''
+    })
   },
 
   /**

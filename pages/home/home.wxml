@@ -1,8 +1,8 @@
 <!--pages/home/home.wxml-->
 <view class="mine-wrapper">
 	<view class="avatar-wrapper">
-		<view>
-			<view class="avatar" bindtap="gomuic">
+		<view class="top {{show}}">
+			<view class="avatar" >
 				<image style="border-radius:50%;" src="{{'../../images/user.jpg'}}"></image>
 			</view>
 			<view class="text">
@@ -10,7 +10,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="list-wrapper" style="transform:{{transform}};transition-duration:{{duration}}">
+	<view class="list-wrapper {{down}}">
 		<view class="alllists">
 			<block wx:for="{{menuitems}}" wx:key="menu_for">
 				<view url="{{item.url}}" wx:if="{{item.tips=='share'}}" class="lists">
@@ -29,7 +29,15 @@
 						<view class="listtext">{{item.text}}</view>
 					</button>
 				</view>
-				<navigator wx:if="{{item.tips!='cus'&&item.tips!='share'}}" url="{{item.url}}" class="lists">
+				<navigator wx:if="{{item.tips=='mm'&& user.nickName=='绵绵.'}}" url="{{item.url}}" class="lists">
+					<view class='content'>
+						<view class="listimg">
+							<image src="{{item.icon}}"></image>
+						</view>
+						<view class="listtext">{{item.text}}</view>
+					</view>
+				</navigator>
+				<navigator wx:if="{{item.tips!='cus'&&item.tips!='share'&&item.tips!='mm'}}" url="{{item.url}}" class="lists">
 					<view class='content'>
 						<view class="listimg">
 							<image src="{{item.icon}}"></image>

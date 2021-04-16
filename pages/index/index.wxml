@@ -67,5 +67,5 @@
 	<view class="map-box" style="margin-top:30rpx">
 		<map class='map' id='myMap' longitude="{{longitude}}" latitude="{{latitude}}" show-location="true" bindtap='bindMapTap' scale='15'>
 		</map>
-	</view>
+  </view>
 </view>

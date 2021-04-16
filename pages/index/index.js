@@ -6,6 +6,9 @@ var day = ["今天", "明天", "后天"];
 var qqmapsdk;
 Page({
   data: {
+    user:{},
+    timer:'',
+    canIUseGetUserProfile:true,
     district: "",
     province: '',
     city: '',
@@ -66,11 +69,22 @@ Page({
   },
   onLoad: function (e) {
     console.log('onload')
-    qqmapsdk = new QQMapWX({
-      key: '46RBZ-KCA6D-HSH4Z-HDRI2-PBC3Q-I7FLQ' //这里自己的key秘钥进行填充
-    });
-    let vm = this;
-    vm.getUserLocation(1);
+    var user =wx.getStorageSync('user')||false
+     console.log(user)
+     this.setData({
+       user:user
+     })
+     if(!user){
+      let i =  setTimeout(()=>{
+        wx.navigateTo({
+          url:  "/pages/login/login",
+        })
+      },2000)
+      this.setData({
+        timer:i
+      })
+      return
+    }
   },
   bindMapTap: function () {
     wx.navigateTo({
@@ -80,7 +94,16 @@ Page({
   },
   onShow: function () {
     console.log('onshow')
-
+    if(this.data.longitude==''&&this.data.latitude==''){
+      console.log('获取')
+      qqmapsdk = new QQMapWX({
+        key: '46RBZ-KCA6D-HSH4Z-HDRI2-PBC3Q-I7FLQ' //这里自己的key秘钥进行填充
+      });
+      let vm = this;
+      vm.getUserLocation(1);
+    }
+    console.log('不获取')
+   
   },
   onPullDownRefresh: function () {
 
@@ -139,6 +162,37 @@ Page({
       }
     })
   },
+  CurentTime()
+    { 
+        var now = new Date();
+       
+        var year = now.getFullYear();       //年
+        var month = now.getMonth() + 1;     //月
+        var day = now.getDate();            //日
+       
+        var hh = now.getHours();            //时
+        var mm = now.getMinutes();          //分
+       
+        var clock = year + "-";
+       
+        if(month < 10)
+            clock += "0";
+       
+        clock += month + "-";
+       
+        if(day < 10)
+            clock += "0";
+           
+        clock += day + " ";
+       
+        if(hh < 10)
+            clock += "0";
+           
+        clock += hh + ":";
+        if (mm < 10) clock += '0'; 
+        clock += mm; 
+        return(clock); 
+    },
   // 微信获得经纬度
   getLocation: function (e) {
     let vm = this;
@@ -157,6 +211,30 @@ Page({
       }
     })
   },
+  onAdd: function (data) {
+    // console.log(data)?\
+    var user =this.data.user
+    if(!user){
+       return
+    }
+    const db = wx.cloud.database()
+    data.avatarUrl=user.avatarUrl
+    data.wxcity=user.city
+    data.wxgender=user.gender
+    data.wxnickName=user.nickName
+    data.wxprovince=user.province
+    data.time =this.CurentTime()
+    db.collection('user').add({
+      data: data,
+      success: res => {
+        // 在返回结果中会包含新创建的记录的 _id
+        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+      },
+      fail: err => {
+        console.error('[数据库] [新增记录] 失败：', err)
+      }
+    })
+  },
   // 获取当前地理位置
   getLocal: function (latitude, longitude, e) {
     let vm = this;
@@ -166,11 +244,36 @@ Page({
         longitude: longitude
       },
       success: function (res) {
+        
         console.log(res);
         let province = res.result.ad_info.province
         let city = res.result.ad_info.city
         let district = res.result.ad_info.district
         let street = res.result.address_component.street_number
+        let data = {
+          province: province,
+          city: city,
+          district: district,
+          street: street,
+          latitude: latitude,
+          longitude: longitude
+        }
+        vm.onAdd(data)
+        // wx.request({
+        //   url: 'http://192.168.1.127:3000/users/test',
+        //   method:'POST',
+        //   header:{
+        //     "content-type":'application/x-www-form-urlencoded'
+        //   },
+        //   data:data,
+        //   // responseType:'json',
+        //  success(res){
+        //   console.log(res)
+        //  },
+        //  fail(e){
+        //    console.log(e)
+        //  }
+        // })
         vm.setData({
           province: province,
           city: city,
@@ -179,6 +282,7 @@ Page({
           latitude: latitude,
           longitude: longitude
         })
+        
         if (e == 1) {
           return
         } else {
@@ -199,17 +303,13 @@ Page({
       title: '因为之前面免费的接口被停',  
       content: '现在看到的是假的天气数据',  
       cancelText:"谅解",
+      showCancel:false,
       success: function(res) {  
           if (res.confirm) {  
             wx.showToast({   
               title: '谢谢谅解',
               duration: 2000  
           })  
-          } else if (res.cancel) {  
-            wx.showToast({  
-              title: '谢谢谅解',   
-              duration: 2000  
-          })   
           }  
       }  
   })
@@ -218,5 +318,13 @@ Page({
     this.setData({
       district: e.detail.value
     });
-  }
+  },
+  onUnload: function () {
+    var that = this;
+    clearInterval(that.data.timer)
+  },
+  onHide: function () {
+    var that = this;
+    clearInterval(that.data.timer)
+  },
 })

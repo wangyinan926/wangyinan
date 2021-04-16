@@ -1,14 +1,17 @@
 {
   "pages": [
     "pages/center/center",
+    "pages/user/user",
+    "pages/login/login",
     "pages/index/index",
     "pages/home/home",
-    "pages/my_music/my_music",
     "pages/logs/logs",
     "pages/map/map",
     "pages/mine/mine"
   ],
-  "requiredBackgroundModes": ["audio"],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",

@@ -1,0 +1,34 @@
+<!--pages/user/user.wxml-->
+<view>
+  <view class="header-box">
+    <view class="header-li">头像</view>
+    <view class="header-li">姓名</view>
+    <view class="header-li">性别</view>
+    <view class="header-li">手机号</view>
+    <view class="header-li">微信地区</view>
+    <view class="header-li">地址</view>
+    <view class="header-li">时间</view>
+  </view>
+    <view class="body-box">
+      <view class="box-item" wx:for="{{queryResult}}" wx:key="index">
+        <view class="box-left">
+          <view class="box-li box-image">
+            <image src="{{item.avatarUrl}}" alt="" srcset=""></image>
+          </view>
+        </view>
+        <view class="box-right">
+          <view class="box-li"><text class="label">姓名</text><text class="left">{{item.wxnickName}}</text> </view>
+          <view class="box-li"><text class="label">性别</text><text class="left">{{item.wxgender==1?'男':'女'}}</text>
+          </view>
+          <view class="box-li"><text class="label">手机号</text><text class="left">{{item.phone||'-'}}</text></view>
+          <view class="box-li"><text class="label">地址</text><text class="left">{{item.wxprovince}}{{item.wxcity}}</text>
+          </view>
+          <view class="box-li"><text class="label">现地址</text><text
+              class="left">{{item.province }}{{item.city}}{{item.district}}{{item.street}}</text></view>
+          <view class="box-li"><text class="label">时间</text><text class="left">{{item.time}}</text></view>
+        </view>
+
+      </view>
+    </view>
+
+</view>

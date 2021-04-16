@@ -14,6 +14,8 @@
   background: #fff;
   border: 1rpx solid #e0e3da;
   border-radius: 18rpx;
+  position: relative;
+  /* bottom: -200px//;/ */
 }
 
 .avatar-wrapper .avatar {
@@ -104,4 +106,52 @@ button::after {
   text-align: left;
   margin: 0;
   padding: 0;
+}
+.down{
+  animation:mymove 1s ;
+  -webkit-animation:mymove 1s ; /*Safari and Chrome*/
+}
+.top{
+  position: relative;
+  opacity: 1;
+}
+.show{
+  animation:myshow 2s ;
+  -webkit-animation:myshow 2s ; /*Safari and Chrome*/
+}
+@keyframes myshow
+{
+  0%{
+    opacity: 0;
+  }
+  20%{
+    opacity: 0;
+  }
+  40%{
+    opacity: 0.3;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@-webkit-keyframes myshow
+{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+} /*Safari and Chrome*/
+
+@keyframes mymove
+{
+from {top:-200px;}
+to {top:0px;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+from {top:-200px;}
+to {top:0px;}
 }

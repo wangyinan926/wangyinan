@@ -1,0 +1,64 @@
+/* pages/user/user.wxss */
+.header-box{
+  display: flex;
+  padding: 20rpx 0;
+  margin: 0 auto 40rpx;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(94, 73, 73);
+  border-bottom:1rpx solid #cccccc;
+  position: fixed;
+  top: 0;
+  width:100%;
+  background-color: #f3f3f3;
+  z-index: 999;
+}
+.body-box{
+  margin-top: 100rpx;
+  height: auto;
+  overflow-y: scroll;
+}
+.box-item{
+  background: #f3f3f3;
+  padding: 30rpx 20rpx;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx 0;
+}
+page{
+  height: auto;
+}
+.box-left{
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-left .box-image image{
+    display: block;
+    border-radius: 20rpx;
+    width: 200rpx;
+    height: 200rpx;
+    overflow: hidden;
+}
+.box-right{
+  width: 60%;
+}
+.label{
+  display: inline-block;
+  width: 120rpx;
+}
+.box-li{
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin: 10rpx 0;
+}
+.box-li text{
+  text-align: left;
+}
+.left{
+  display: block;
+  width:75% ;
+}

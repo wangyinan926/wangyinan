@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view class ="tips">
+  为了宇宙和平，世界需要你的支持！
+</view>
+<view class="bottom">
+    <button class="button" bindtap="getUserProfile"> 一键助力 </button>
+</view>
+<view wx:if="{{down}}" class="downbox"> 
+  <view class="diao  {{down}}"> {{message1}}
+    <view class="diao2 ">
+      {{message2}}
+    </view>
+  </view>
+</view>

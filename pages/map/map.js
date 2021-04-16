@@ -101,7 +101,6 @@ Page({
           latitude: latitude,
           longitude: longitude
         })
- 
       },
       fail: function (res) {
         console.log(res);

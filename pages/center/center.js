@@ -1,6 +1,7 @@
 "use strict";
 Page({
   data: {
+    timer:'',
     time:'',
     title: "ddemo",
     currentIndex: 0,
@@ -99,9 +100,20 @@ Page({
       two_five: "animated fadeOut"
     })
   },
-  onLoad: function () {},
   onReady: function () {},
   onLoad: function () {
+    var user =wx.getStorageSync('user')||false
+    console.log(user)
+    if(!user){
+      let i =  setTimeout(()=>{
+        wx.navigateTo({
+          url:  "/pages/login/login",
+        })
+      },5000)
+      this.setData({
+        timer:i
+      })
+    }
     this.setData({
       bottom: "",
       bottom_one: "",
@@ -152,6 +164,8 @@ Page({
     }, 3400)
   },
   onHide: function () {
+    var that = this;
+    clearInterval(that.data.timer)
     // this.cleanAnimated(), 
     // this.setData({
     //   bottom: "",
@@ -161,7 +175,10 @@ Page({
     //   bottom_four: ""
     // })
   },
-  onUnload: function () {},
+  onUnload: function () {
+    var that = this;
+    clearInterval(that.data.timer)
+  },
   onPullDownRefresh: function () {}
 });
 //# sourceMappingURL=ddemo.js.map
