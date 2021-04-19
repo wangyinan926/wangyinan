@@ -113,7 +113,7 @@ button::after {
 }
 .top{
   position: relative;
-  opacity: 1;
+  opacity:1;
 }
 .show{
   animation:myshow 2s ;
@@ -154,4 +154,7 @@ to {top:0px;}
 {
 from {top:-200px;}
 to {top:0px;}
+}
+.none{
+  display: none;
 }

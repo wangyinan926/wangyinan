@@ -74,24 +74,31 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log('onshow')
     var that = this
-    var user =wx.getStorageSync('user')||false
     this.setData({
-      user:user,
       down:'down',
       show:'show'
     })
+    if(!that.data.user){
+      var user =wx.getStorageSync('user')||false
+      this.setData({
+        user:user
+      })
+    }
+   
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    console.log('隐藏')
     var that = this;
     clearInterval(that.data.timer)
     this.setData({
-      down: '',
-      show:''
+      down: 'none',
+      show:'none'
     })
   },
 
@@ -99,11 +106,12 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    console.log('卸载')
     var that = this;
     clearInterval(that.data.timer)
     this.setData({
-      down: '',
-      show:''
+      down: 'none',
+      show:'none'
     })
   },
 
